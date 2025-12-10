@@ -1,6 +1,6 @@
 # @cbabil/ui-toolkit
 
-Lightweight React UI toolkit with bundled styles and Ladle demos. Published to GitHub Packages.
+Lightweight React UI toolkit with bundled styles and Ladle demos.
 
 ## Consume (no registry publish)
 Option A — git dependency (keeps source):  
