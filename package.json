@@ -1,5 +1,5 @@
 {
-  "name": "@cbabil/ui-toolkit",
+  "name": "ui-toolkit",
   "version": "0.0.1",
   "private": true,
   "main": "dist/index.cjs",
@@ -11,9 +11,6 @@
     "src",
     "styles.css"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "dev": "ladle dev",
     "build:preview": "ladle build",
