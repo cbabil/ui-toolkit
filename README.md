@@ -1,4 +1,4 @@
-# @cbabil/ui-toolkit
+# ui-toolkit
 
 Lightweight React UI toolkit with bundled styles and Ladle demos.
 
