@@ -1,0 +1,50 @@
+name: Build Release Artifact
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_bump:
+        description: "npm version: patch | minor | major | none"
+        required: true
+        default: "none"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: yarn install --frozen-lockfile
+
+      - name: Typecheck
+        run: yarn typecheck
+
+      - name: Build
+        run: yarn build:lib
+
+      - name: Optional version bump
+        if: ${{ github.event.inputs.version_bump != 'none' }}
+        run: npm version ${{ github.event.inputs.version_bump }} --no-git-tag-version
+
+      - name: Package artifact
+        run: |
+          mkdir -p release
+          cp -r dist release/
+          cp styles.css release/
+          cp package.json release/
+          cp README.md release/
+          cp LICENSE release/ || true
+          cd release && zip -r ../ui-toolkit-dist.zip .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-toolkit-dist
+          path: ui-toolkit-dist.zip
