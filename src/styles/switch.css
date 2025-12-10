@@ -1,0 +1,37 @@
+/* Switch */
+.ui-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.ui-switch__input { display: none; }
+.ui-switch__track {
+  position: relative;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+  transition: background-color 120ms ease;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--switch-padding);
+}
+.ui-switch__thumb {
+  width: var(--switch-thumb);
+  height: var(--switch-thumb);
+  background: var(--color-contrast-on-accent);
+  border-radius: 50%;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+  box-shadow: var(--elev-xs);
+}
+.ui-switch__input:checked + .ui-switch__track {
+  background: var(--color-accent-primary);
+}
+.ui-switch__input:checked + .ui-switch__track .ui-switch__thumb {
+  transform: translateX(calc(var(--switch-width) - var(--switch-thumb) - var(--switch-offset)));
+}
+.ui-switch__label { font-size: var(--fs-15); }
+.ui-switch.is-disabled { opacity: 0.6; cursor: not-allowed; }

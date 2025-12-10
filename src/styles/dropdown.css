@@ -1,0 +1,101 @@
+/* Dropdown */
+.ui-dropdown {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  min-width: 220px;
+}
+
+.ui-dropdown__label {
+  font-size: 13px;
+  color: var(--color-text);
+  opacity: 0.85;
+  margin-right: 10px;
+}
+
+.ui-dropdown__row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.ui-dropdown__control {
+  position: relative;
+  width: 100%;
+}
+
+.ui-dropdown__button {
+  width: 100%;
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: var(--border-1) solid var(--input-border);
+  border-radius: var(--radius-12);
+  padding: var(--space-8) var(--space-12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+}
+
+.ui-dropdown__button:focus-visible {
+  outline: 3px solid var(--color-accent-primary);
+  outline-offset: 2px;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 4px rgba(91, 71, 255, 0.25);
+}
+
+.ui-dropdown__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ui-dropdown__value {
+  font-size: 14px;
+}
+
+.ui-dropdown__chevron {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.ui-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: var(--border-1) solid var(--input-border);
+  border-radius: var(--radius-12);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.ui-dropdown__option {
+  padding: var(--space-8) var(--space-12);
+  border-radius: var(--radius-10);
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.ui-dropdown__option.is-focused {
+  background: rgba(91, 71, 255, 0.12);
+}
+
+.ui-dropdown__option.is-selected {
+  background: rgba(91, 71, 255, 0.2);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.ui-dropdown__option.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

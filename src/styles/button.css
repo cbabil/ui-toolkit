@@ -1,0 +1,80 @@
+/* ProjectHub-inspired button styling (works even if Tailwind isn't active) */
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-12);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-semibold);
+  line-height: 1.2;
+  border: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+  color: #fff;
+  background-color: var(--color-accent-primary);
+  box-shadow: none;
+}
+
+.ui-btn:hover:not(:disabled) {
+  background-color: var(--color-accent-boost);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+.ui-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ui-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.ui-btn--ghost {
+  background: transparent;
+  color: var(--color-accent-primary);
+  border: 1px solid rgba(106, 90, 205, 0.3);
+}
+
+.ui-btn--ghost:hover:not(:disabled) {
+  background: rgba(106, 90, 205, 0.08);
+}
+
+.ui-input {
+  width: 100%;
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: var(--border-1) solid var(--input-border);
+  border-radius: var(--radius-12);
+  padding: var(--space-8) var(--space-12);
+  font-size: var(--fs-15);
+  line-height: 1.4;
+  transition: none;
+}
+
+.ui-input:focus {
+  outline: none;
+  border-color: var(--input-border);
+  box-shadow: none;
+}
+
+.ui-input:focus-visible {
+  outline: none;
+  border-color: var(--input-border);
+  box-shadow: none;
+}
+
+.ui-input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.ui-input:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+  background: var(--input-bg);
+  color: var(--text-secondary);
+  border-color: color-mix(in srgb, var(--input-border) 65%, transparent);
+}

@@ -1,0 +1,41 @@
+{
+  "name": "@cbabil/ui-toolkit",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.cjs",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src",
+    "styles.css"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "dev": "ladle dev",
+    "build:preview": "ladle build",
+    "build:lib": "vite build --config vite.config.lib.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^0.556.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "devDependencies": {
+    "@ladle/react": "^5.1.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.22",
+    "class-variance-authority": "^0.7.1",
+    "postcss": "^8.5.6",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
