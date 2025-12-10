@@ -1,0 +1,23 @@
+node_modules
+.dist
+.ladle
+.ladle/out
+dist
+.DS_Store
+.env
+.npmrc
+logs
+coverage
+.vscode
+.idea
+npm-debug.log*
+yarn-error.log*
+# Yarn 2/3 artifacts (keep managed subfolders)
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+# Ignore docs per request
+docs

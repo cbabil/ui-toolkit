@@ -1,0 +1,192 @@
+/* Table */
+.ui-table {
+  width: 100%;
+  border: var(--border-1) solid var(--color-border);
+  border-radius: var(--radius-12);
+  background: var(--color-surface);
+  overflow: hidden;
+  box-shadow: var(--elev-xs);
+}
+
+.ui-table__header,
+.ui-table__row {
+  display: grid;
+  align-items: center;
+}
+.ui-table__header {
+  background: color-mix(in srgb, var(--color-accent-primary) 6%, var(--color-surface));
+  border-bottom: var(--border-1) solid var(--color-border);
+}
+
+.ui-table__body .ui-table__row:not(:last-child) {
+  border-bottom: var(--border-1) solid var(--color-border);
+}
+
+.ui-table__cell {
+  padding: var(--space-10) var(--space-12);
+  font-size: var(--fs-15);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.ui-table__cell.is-header {
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+}
+
+.ui-table__cell.is-sortable {
+  cursor: pointer;
+}
+
+.ui-table__cell.is-active {
+  color: var(--color-accent-primary);
+}
+
+.ui-table__row:nth-child(even) {
+  background: color-mix(in srgb, var(--color-surface) 90%, var(--color-border) 10%);
+}
+
+.ui-table--with-index .ui-table__cell.is-index {
+  width: 48px;
+  color: var(--text-secondary);
+}
+
+.ui-grid-table__sort {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Toolbar */
+.ui-table__toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-10) var(--space-12);
+  background: transparent;
+  width: 100%;
+}
+
+.ui-table__toolbar .ui-table__search.ui-search {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  padding: var(--space-8) var(--space-12);
+  border-radius: var(--radius-12);
+  box-shadow: none;
+  width: 100%;
+  max-width: none;
+}
+.ui-table__toolbar .ui-table__search .ui-search__input {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+.ui-table__toolbar .ui-table__search .ui-search__icon { color: var(--text-secondary); }
+
+.ui-table__columns {
+  position: relative;
+  flex-shrink: 0;
+}
+.ui-table__columns-btn {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius-10);
+  padding: var(--space-6) var(--space-10);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+.ui-table__columns-btn:hover {
+  border-color: transparent;
+  color: var(--color-accent-primary);
+}
+.ui-table__columns-popover {
+  position: absolute;
+  top: calc(100% + var(--space-6));
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-12);
+  box-shadow: var(--elev-sm);
+  padding: var(--space-8);
+  display: grid;
+  gap: var(--space-6);
+  min-width: 200px;
+  z-index: 20;
+}
+.ui-table__columns-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font-size: var(--fs-14);
+  color: var(--text-primary);
+}
+.ui-table__columns-divider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* Pagination */
+.ui-table__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding: var(--space-10) var(--space-12);
+  font-size: var(--fs-13);
+  color: var(--text-secondary);
+}
+.ui-table__pagination-pos {
+  color: var(--text-secondary);
+}
+.ui-table__pagination-actions {
+  display: inline-flex;
+  gap: var(--space-6);
+}
+.ui-table__pagination button {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--text-primary);
+  border-radius: var(--radius-10);
+  padding: var(--space-6) var(--space-10);
+  cursor: pointer;
+  transition: border-color 120ms ease, color 120ms ease, background-color 120ms ease;
+}
+.ui-table__pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.ui-table__pagination button:not(:disabled):hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+}
+.ui-table__pagination span {
+  padding: 0 var(--space-6);
+}
+
+/* Page size select */
+.ui-table__pagination-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  flex-wrap: wrap;
+}
+.ui-table__page-size {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  font-size: var(--fs-13);
+  color: var(--text-secondary);
+}
+.ui-table__page-size select {
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-text);
+  border-radius: var(--radius-12);
+  padding: var(--space-6) var(--space-10);
+  font-size: var(--fs-13);
+}

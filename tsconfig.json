@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["vite/client", "@ladle/react"]
+  },
+  "include": ["src", "*.config.ts", "*.config.cjs", "*.config.js", "*.cjs", "*.ts", "*.tsx", ".ladle"],
+  "exclude": ["dist", "node_modules"]
+}

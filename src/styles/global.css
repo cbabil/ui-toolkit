@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ui-radius: 8px;
+  --ui-spacing: 0.75rem;
+  --table-header-pad-y: 14px;
+  --table-header-pad-x: 12px;
+
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", SFMono-Regular, Consolas, monospace;
+
+  --fs-10: 10px;
+  --fs-11: 11px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-17: 17px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+  --fs-32: 32px;
+
+  --lh-body: 1.5;
+  --lh-ui: 1.4;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  --ls-tight: -0.01em;
+  --ls-none: 0;
+  --ls-wide: 0.01em;
+
+  /* Icon sizes */
+  --icon-12: 12px;
+  --icon-14: 14px;
+  --icon-16: 16px;
+  --icon-18: 18px;
+  --icon-20: 20px;
+
+  /* Spacing scale */
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-11: 11px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+
+  /* Radius scale */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --elev-xs: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --elev-sm: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --elev-md: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --elev-lg: 0 16px 32px rgba(0, 0, 0, 0.2);
+
+  /* Control sizes */
+  --switch-width: 46px;
+  --switch-height: 26px;
+  --switch-thumb: 20px;
+  --switch-padding: 3px;
+  --switch-offset: 6px;
+  --checkbox-size: 18px;
+  --checkbox-check-left: 4px;
+  --checkbox-check-top: 0px;
+  --checkbox-check-w: 6px;
+  --checkbox-check-h: 12px;
+  --checkbox-check-stroke: 2px;
+  --radio-size: 18px;
+  --radio-dot: 10px;
+  --radio-border: 1px;
+  --radio-dot-gap: 4px;
+  --search-min-width: 240px;
+  --stepper-dot-size: 40px;
+
+  /* Tabs */
+  --tabs-gap: 6px;
+  --tabs-padding-y: 6px;
+  --tabs-padding-x: 8px;
+  --tabs-radius: 12px;
+  --tabs-bg: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  --tabs-border: var(--color-border);
+  --tabs-shadow: var(--elev-xs);
+  --tab-padding-y: 9px;
+  --tab-padding-x: 16px;
+  --tab-radius: 10px;
+  --tab-font-size: var(--fs-17);
+  --tab-font-weight: var(--fw-semibold);
+  --tab-hover-border: color-mix(in srgb, var(--color-accent-primary) 40%, transparent);
+  --tab-hover-bg: color-mix(in srgb, var(--color-accent-primary) 8%, transparent);
+  --tab-active-bg: linear-gradient(140deg, color-mix(in srgb, var(--color-accent-primary) 75%, transparent), var(--color-accent-primary));
+  --tab-active-border: color-mix(in srgb, var(--color-accent-primary) 65%, transparent);
+  --tab-active-shadow: 0 8px 16px rgba(0, 0, 0, 0.28);
+
+  /* Contrast */
+  --color-contrast-on-accent: #ffffff;
+
+  /* Borders */
+  --border-1: 1px;
+
+  /* Skeleton */
+  --skeleton-base: rgba(106, 90, 205, 0.16);
+  --skeleton-base-dark: rgba(106, 90, 205, 0.22);
+  --skeleton-shimmer: rgba(255, 255, 255, 0.35);
+  --skeleton-speed: 0.9s;
+
+  /* Grid actions */
+  --grid-actions-gap: 2px;
+  --sidemenu-width: 240px;
+
+  /* light theme */
+  --color-bg: #f7f7fa;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-border: #d1d5db;
+  --color-placeholder: #6b7280;
+  --color-accent-primary: #6a5acd;
+  --color-accent-boost: #4f46e5;
+  --color-glow: rgba(79, 70, 229, 0.25);
+  --color-success: #22c55e;
+  --color-success-strong: #16a34a;
+  --color-warning: #f59e0b;
+  --color-warning-strong: #c37a00;
+  --color-danger: #ef4444;
+  --color-danger-strong: #dc2626;
+  --color-surface-strong: #eef2ff;
+
+  /* Input theme (light) */
+  --input-bg: #ffffff;
+  --input-text: #0f172a;
+  --input-border: #6a5acd;
+  --input-placeholder: #6b7280;
+
+  /* Text colors (light) */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-disabled: #94a3b8;
+}
+
+:root[data-theme='dark'],
+html[data-theme='dark'],
+body[data-theme='dark'],
+:root[data-mode='dark'],
+html[data-mode='dark'],
+body[data-mode='dark'],
+:root[data-darkmode='dark'],
+html[data-darkmode='dark'],
+body[data-darkmode='dark'],
+:root.ladle-dark,
+html.ladle-dark,
+body.ladle-dark,
+body.dark,
+:root.dark {
+  --color-bg: #0f172a;
+  --color-surface: #111827;
+  --color-text: #e2e8f0;
+  --color-border: #1f2937;
+  --color-placeholder: #9ca3af;
+  --color-accent-primary: #7b6df3;
+  --color-accent-boost: #6757e6;
+  --color-glow: rgba(103, 87, 230, 0.35);
+  --color-success: #34d399;
+  --color-success-strong: #22c55e;
+  --color-warning: #fbbf24;
+  --color-warning-strong: #d97706;
+  --color-danger: #f87171;
+  --color-danger-strong: #ef4444;
+  --color-surface-strong: #131833;
+
+  /* Input theme (dark) */
+  --input-bg: #1b1835;
+  --input-text: #f5f4ff;
+  --input-border: #6a5acd;
+  --input-placeholder: #c5c7d8;
+
+  /* Text colors (dark) */
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e1;
+  --text-disabled: #64748b;
+}
+
+.btn-focus {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500;
+}
+
+.ladle-root,
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-15);
+  line-height: var(--lh-body);
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Typography utility classes */
+.typo-h2 {
+  font-size: var(--fs-32);
+  line-height: 1.2;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-tight);
+}
+.typo-h3 {
+  font-size: var(--fs-24);
+  line-height: 1.25;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-tight);
+}
+.typo-h4 {
+  font-size: var(--fs-20);
+  line-height: 1.3;
+  font-weight: var(--fw-semibold);
+}
+.typo-title {
+  font-size: var(--fs-17);
+  line-height: 1.35;
+  font-weight: var(--fw-semibold);
+}
+.typo-body {
+  font-size: var(--fs-15);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+}
+.typo-body-strong {
+  font-size: var(--fs-15);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-semibold);
+}
+.typo-label {
+  font-size: var(--fs-13);
+  line-height: var(--lh-ui);
+  font-weight: var(--fw-medium);
+  color: var(--text-secondary);
+}
+.typo-caption {
+  font-size: var(--fs-11);
+  line-height: 1.3;
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  color: var(--text-secondary);
+}
+.typo-muted {
+  color: var(--text-secondary);
+}

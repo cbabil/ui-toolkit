@@ -1,0 +1,102 @@
+/* Toast */
+.ui-toast {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: var(--space-10);
+  width: min(360px, 100%);
+  padding: var(--space-12) var(--space-16);
+  border-radius: var(--radius-12);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--elev-sm);
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.ui-toast__icon {
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-top: 2px;
+  border-radius: 50%;
+  font-size: var(--fs-14);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--color-accent-primary) 10%, transparent);
+}
+
+.ui-toast__content {
+  display: grid;
+  gap: var(--space-6);
+  z-index: 1;
+}
+
+.ui-toast__title {
+  font-size: var(--fs-15);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-tight);
+}
+
+.ui-toast__message {
+  font-size: var(--fs-14);
+  color: var(--text-secondary);
+  line-height: var(--lh-body);
+}
+
+.ui-toast__close {
+  z-index: 1;
+  margin-left: var(--space-10);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-10);
+  padding: var(--space-4);
+  min-width: 32px;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.ui-toast__close:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* Variant tints (for text/icon emphasis) */
+.ui-toast--success .ui-toast__title,
+.ui-toast--success .ui-toast__icon { color: var(--color-success-strong); }
+.ui-toast--warning .ui-toast__title,
+.ui-toast--warning .ui-toast__icon { color: var(--color-warning-strong); }
+.ui-toast--danger .ui-toast__title,
+.ui-toast--danger .ui-toast__icon { color: var(--color-danger-strong); }
+
+.ui-toast--success .ui-toast__icon {
+  background: color-mix(in srgb, var(--color-success) 18%, transparent);
+}
+.ui-toast--warning .ui-toast__icon {
+  background: color-mix(in srgb, var(--color-warning) 18%, transparent);
+}
+.ui-toast--danger .ui-toast__icon {
+  background: color-mix(in srgb, var(--color-danger) 18%, transparent);
+}
+
+:root[data-theme='dark'] .ui-toast,
+body.dark .ui-toast,
+.ladle-dark .ui-toast {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: var(--elev-md);
+}
+
+:root[data-theme='dark'] .ui-toast__close:hover,
+body.dark .ui-toast__close:hover,
+.ladle-dark .ui-toast__close:hover {
+  background: rgba(255, 255, 255, 0.06);
+}

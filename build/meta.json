@@ -1,0 +1,33 @@
+{
+  "about": {
+    "homepage": "https://www.ladle.dev",
+    "github": "https://github.com/tajo/ladle",
+    "version": 1
+  },
+  "stories": {
+    "components--button--playground": {
+      "name": "Playground",
+      "levels": [
+        "Components",
+        "Button"
+      ],
+      "locStart": 9,
+      "locEnd": 9,
+      "filePath": "src/Button.stories.tsx",
+      "namedExport": "Playground",
+      "meta": {}
+    },
+    "components--button--with-icons": {
+      "name": "With icons",
+      "levels": [
+        "Components",
+        "Button"
+      ],
+      "locStart": 16,
+      "locEnd": 20,
+      "filePath": "src/Button.stories.tsx",
+      "namedExport": "WithIcons",
+      "meta": {}
+    }
+  }
+}
