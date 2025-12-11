@@ -3,21 +3,14 @@
 Lightweight React UI toolkit with bundled styles and Ladle demos.
 
 ## Consume (no registry publish)
-Option A — git dependency (keeps source):  
+- Download the latest release asset `ui-toolkit-dist.zip` from GitHub Releases.
+- Unzip into your project (e.g., `src/vendor/ui-toolkit`).
+- Import the built CSS once:
 ```
-yarn add github:cbabil/ui-toolkit
-```
-Then build styles in your app entry:  
-```
-import 'ui-toolkit/dist/style.css';
-```
-
-Option B — download build artifact (recommended):  
-- Run the “Build Release” workflow (or `yarn build:lib` locally) and grab the uploaded `ui-toolkit-dist.zip`.  
-- Unzip and point your app to the built files:
-```
-// add to your app (e.g. src/vendor/ui-toolkit)
 import './vendor/ui-toolkit/style.css';
+```
+- Import components from the unzipped package (ESM build):
+```
 import { Button, Modal, Table, Tabs, Toast } from './vendor/ui-toolkit';
 ```
 
@@ -27,8 +20,8 @@ import { Button, Modal, Table, Tabs, Toast } from './vendor/ui-toolkit';
 - Build lib: `yarn build:lib`
 
 ## Releases
-- No registry publish. Use the “Build Release” GitHub Action (workflow_dispatch) to produce a `ui-toolkit-dist.zip` artifact containing `dist/`, `styles.css`, and typings.
-- For manual release: `yarn build:lib && npm pack` or zip the `dist` folder.
+- Use the "Build Release Artifact" workflow to create a tag+release from the current package.json version and attach `ui-toolkit-dist.zip` (includes `dist/`, typings, metadata).
+- Manual: `yarn build:lib && npm pack` (or zip `dist/` yourself) if you need a local artifact.
 
 ## Making changes
 - Edit source in `src/` and styles in `src/styles/`.
