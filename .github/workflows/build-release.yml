@@ -28,7 +28,7 @@ jobs:
       - name: Set release version
         id: version
         run: |
-          TAG="v$(node -p \"require('./package.json').version\")"
+          TAG=$(node -e "console.log('v'+require('./package.json').version)")
           echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
           echo "Using tag ${TAG}"
 
@@ -48,6 +48,7 @@ jobs:
           path: ui-toolkit-dist.zip
 
       - name: Create GitHub Release
+        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -62,7 +63,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.version.outputs.upload_url || github.event.repository.releases_url }}
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ui-toolkit-dist.zip
           asset_name: ui-toolkit-dist.zip
           asset_content_type: application/zip
