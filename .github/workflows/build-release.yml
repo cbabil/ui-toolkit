@@ -57,6 +57,10 @@ jobs:
         with:
           tag_name: ${{ steps.version.outputs.tag }}
           release_name: ${{ steps.version.outputs.tag }}
+          body: |
+            Release built from package.json version.
+            Assets:
+            - ui-toolkit-dist.zip (includes dist, typings, package.json, README, LICENSE)
           draft: false
           prerelease: false
 
