@@ -41,13 +41,13 @@ jobs:
           cp package.json release/
           cp README.md release/
           cp LICENSE release/ || true
-          cd release && zip -r ../ui-toolkit-dist.zip .
+          cd release && zip -r ../ui-toolkit-${{ steps.version.outputs.tag }}.zip .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ui-toolkit-dist
-          path: ui-toolkit-dist.zip
+          name: ui-toolkit-${{ steps.version.outputs.tag }}
+          path: ui-toolkit-${{ steps.version.outputs.tag }}.zip
 
       - name: Create GitHub Release
         id: create_release
@@ -70,6 +70,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ui-toolkit-dist.zip
-          asset_name: ui-toolkit-dist.zip
+          asset_path: ui-toolkit-${{ steps.version.outputs.tag }}.zip
+          asset_name: ui-toolkit-${{ steps.version.outputs.tag }}.zip
           asset_content_type: application/zip
